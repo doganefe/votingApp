@@ -1,8 +1,13 @@
 import React from 'react'
 import styles from './EmployeeCard.module.scss'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
-function EmployeeCard({ employee,vote }) {
+const myLoader = ({ src, width, quality }) => {
+    return `${src}}`
+  }
+
+function EmployeeCard({ employee, vote }) {
     const router = useRouter()
 
     const goToDetails = (e) => {
@@ -12,11 +17,14 @@ function EmployeeCard({ employee,vote }) {
 
     return (
         <div className={styles.employeeCard} >
-            <img
+            <Image
                 onClick={goToDetails}
                 className={styles.employeeCard__img}
                 src={employee.imgSrc}
                 alt="1.jpg"
+                loader={myLoader}
+                width={999}
+                height={999}
             />
 
             <div onClick={goToDetails} className={styles.employeeCard__nameInfo}>
