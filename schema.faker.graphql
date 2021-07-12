@@ -1,0 +1,21 @@
+type Employee {
+  id: ID,
+  firstName: String @fake(type: firstName,locale:tr)
+  lastName: String @fake(type:lastName,locale:tr)
+  imgSrc :String @fake(type:imageUrl,locale:tr)
+  email :String @fake(type:email,locale:tr)
+  phoneNumber :String @fake(type:phoneNumber,locale:tr)
+  position :String@examples(values:["Product Manager","Software Engineer","Test Engineer","Software Developer","Software Architect","System Administrator"])
+  voteCount : Int@fake(type:number,options : {minNumber:0,maxNumber:4})
+  address: String @fake(type: streetAddress, options: { useFullAddress: true },locale:tr)
+  subordinates: [Employee!] @listLength(min: 0, max: 3)
+}
+
+type Query {
+  employee( id : ID): Employee
+  allEmployees :[Employee!]
+}
+
+type Mutation {
+  updateEmployee(id: ID!, voteCount: Int): Employee
+}

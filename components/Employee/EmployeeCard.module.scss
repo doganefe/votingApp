@@ -1,0 +1,29 @@
+$primary-color: rgb(255, 0, 0);
+
+.employeeCard {
+  border: 1px lightgray solid;
+  border-radius: 15px;
+  padding: 0 10px;
+  .employeeCard__col1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .employeeCard__nameInfo {
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    cursor: pointer;
+    object-fit: contain;
+  }
+  button {
+    padding: 5px 10px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}

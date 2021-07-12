@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+.employee_detail {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 25px;
+}

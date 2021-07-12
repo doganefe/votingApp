@@ -1,0 +1,2 @@
+export const SAVE_EMPLOYEES = "SAVE_EMPLOYEES"
+export const VOTE_EMPLOYEE = "VOTE_EMPLOYEE"
