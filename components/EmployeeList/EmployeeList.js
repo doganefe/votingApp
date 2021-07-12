@@ -12,12 +12,11 @@ function EmployeeList({ employees }) {
         //graphql mutation is gonna be made here 
         dispatch(voteEmployee(id))
     }
-    console.log(`employees`, employees)
-
+    const sortedList = [...employees].sort((a, b) => (a.voteCount > b.voteCount) ? 1 : -1).reverse()
     return (
         <div className={styles.employeeList}>
             {
-                employees.map((user) => {
+                sortedList.map((user) => {
                     return <EmployeeCard key={user.id} employee={user} vote={() => vote(user.id)} />
                 })
             }
